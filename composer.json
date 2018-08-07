@@ -1,5 +1,5 @@
 {
-    "name": "sonata-project/page-bundle",
+    "name": "grekpg/page-bundle",
     "type": "symfony-bundle",
     "description": "This bundle provides a Site and Page management through container and block services",
     "keywords": [

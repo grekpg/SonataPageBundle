@@ -130,7 +130,7 @@ class ResponseListener
         }
 
         if (!$page) {
-            throw new InternalErrorException('No page instance available for the url, run the sonata:page:update-core-routes and sonata:page:create-snapshots commands');
+            throw new InternalErrorException(sprintf('No page instance available for the url %s, run the sonata:page:update-core-routes and sonata:page:create-snapshots commands',$request->getUri()));
         }
 
         // only decorate hybrid page or page with decorate = true

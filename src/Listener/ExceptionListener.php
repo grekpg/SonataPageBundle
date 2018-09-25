@@ -141,7 +141,9 @@ class ExceptionListener
         $site = $this->siteSelector->retrieve();
 
         if (!$site) {
-            throw new \RuntimeException('No site available');
+
+            $site = $_SERVER['REQUEST_SCHEME'].'://'.$_SERVER['SERVER_NAME'].'/'.$_SERVER['REQUEST_URI'];
+            throw new \RuntimeException('No site available for request: '.$site);
         }
 
         return $cms->getPageByRouteName($site, $this->httpErrorCodes[$statusCode]);

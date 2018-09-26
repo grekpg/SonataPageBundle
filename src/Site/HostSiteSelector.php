@@ -27,6 +27,7 @@ class HostSiteSelector extends BaseSiteSelector
      */
     public function handleKernelRequest(GetResponseEvent $event): void
     {
+
         foreach ($this->getSites($event->getRequest()) as $site) {
             if (!$site->isEnabled()) {
                 continue;
